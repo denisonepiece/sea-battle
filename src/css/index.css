@@ -1,0 +1,191 @@
+body {
+  background-color: #5DC8CD;
+}
+
+h1, h2, h3, h4 {
+  color: #1D7074;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn {
+  color: #5DC8CD;
+  background-color: #1D7074;
+  border: none;
+  padding: 10px 20px;
+}
+
+.btn-start {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.headline {
+  position: absolute;
+  font-size: 50px;
+  margin: 0;
+}
+
+.headline-prev {
+  top: calc(25% - 25px);
+}
+
+.headline-another {
+  top: 50px;
+  left: 50px;
+}
+
+.square {
+  border: 1px solid #1D7074;
+  background: transparent;
+  float: left;
+  height: 34px;
+  width: 34px;
+  margin-top: -1px;
+  margin-right: -1px;
+}
+
+.square-miss, .square-strike {
+  position: relative;
+}
+
+.square-miss::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #1D7074;
+  border-radius: 50%;
+  left: calc(50% - 5px);
+  top: calc(50% - 5px);
+}
+
+.square-strike::before, .square-strike::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: #FB3F51;
+  border-radius: 50%;
+  left: calc(50% - 2px);
+  top: calc(50% - 10px);
+
+}
+
+.square-strike::after {
+  transform: rotate(45deg);
+}
+
+.square-strike::before {
+  transform: rotate(-45deg);
+}
+
+.square-with-ship {
+  background: #1D7074;
+}
+
+
+.field {
+  width: 330px;
+}
+
+.ship-select {
+  width: 350px;
+}
+
+.row {
+  display: flex;
+}
+
+.ship-select {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 200px;
+}
+
+.input-block {
+  background: #99e7e7;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  border: 2px solid #1D7074;
+  position: absolute;
+  right: 0;
+  transition: 1s;
+  opacity: 0;
+}
+
+.input-block--show {
+  right: calc(50% - (358px/2));
+  opacity: 1;
+}
+
+.input-block input{
+  background: transparent;
+  border: 2px solid #1D7074;
+  color: #1D7074;
+  height: 30px;
+  width: 250px;
+  padding: 5px 20px;
+  font-size: 25px;
+}
+
+.input-block input::placeholder {
+  color: rgb(85, 148, 151);
+}
+
+.input-block h3 {
+  margin-top: 0;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.delete {
+  display: none;
+}
+
+.modal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 500px;
+  background: #99e7e7;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  border: 2px solid #1D7074;
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+  opacity: 0;
+}
+
+.modal .btn {
+  margin-top: 20px;
+  color: #99e7e7;
+}
+
+.modal--show {
+  bottom: calc(50% - 150px);
+  opacity: 1;
+  display: flex;
+}
